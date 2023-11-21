@@ -33,99 +33,14 @@
 /* main content */
 .main {
     padding: 20px;
+    /* text-align: center; */
+    /* justify-content: center; */
+}
+.main > h1{
+    color: #000000;
     text-align: center;
-    justify-content: center;
 }
 /* main content */
-
-
-/* content box */
-.content-box {
-    padding: 20px;
-    margin-top: 20px;
-}
-
-.content-box p {
-    color: white;
-    font-size: 30px;
-    border-radius: 10%;
-    text-align: center;
-    background: rgb(119, 119, 119);
-}
-
-.content-box video {
-    width: 100%;
-    height: auto;
-}
-
-.content-box img {
-    width: 100%;
-    height: auto;
-    max-width: 550px;
-}
-/* content box */
-
-
-/* row col */
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-[class*="col-"] {
-    float: left;
-    padding: 15px;
-}
-
-.col-1 {
-    width: 8.33%;
-}
-
-.col-2 {
-    width: 16.66%;
-}
-
-.col-3 {
-    width: 25%;
-}
-
-.col-4 {
-    width: 33.33%;
-}
-
-.col-5 {
-    width: 41.66%;
-}
-
-.col-6 {
-    width: 50%;
-}
-
-.col-7 {
-    width: 58.33%;
-}
-
-.col-8 {
-    width: 66.66%;
-}
-
-.col-9 {
-    width: 75%;
-}
-
-.col-10 {
-    width: 83.33%;
-}
-
-.col-11 {
-    width: 91.66%;
-}
-
-.col-12 {
-    width: 100%;
-}
-/* row col */
 
 
 /*for tablet*/
@@ -138,7 +53,6 @@
     .navbar a {
         float: left;
     }
-
     div.main {
         margin-left: 0;
     }
@@ -146,19 +60,15 @@
         display: none;
     }
 
-    div.content-box p {
-        font-size: 20px;
-    }
 }
-
 
 /*for Mobile*/
 @media screen and (max-width: 576px) {
     .navbar{
         display: grid;
+        width: 100%;
     }
     .navbar a {
-        float: none;
         text-align: center;
         background: rgb(119, 119, 119);
     }
@@ -166,17 +76,74 @@
         display: none;
     }
 
-    [class*="col-"] {
-        width: 100%;
-        margin: 0 auto;
-    }
-
     div.main {
         padding: 0;
         margin-left: 0;
     }
 
-    div.content-box p {
-        font-size: 20px;
-    }
 }
+
+
+.form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Center-align the heading and add margin at the bottom */
+  .form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for each form group */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for form group labels */
+  .form-group label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  /* Styling for various form input types */
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group select,
+  .form-group textarea,
+  .form-group input[type="datetime-local"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Allow vertical resizing for textareas */
+  .form-group textarea {
+    resize: vertical;
+  }
+  
+  /* Styling for select dropdowns */
+  .form-group select {
+    width: 100%;
+  }
+  
+  /* Styling for the submit button */
+  .form-group input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Styling for small helper text */
+  .form-group small {
+    font-size: 12px;
+    color: #888;
+  }
