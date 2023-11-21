@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- navbar -->
     <div class="navbar">
@@ -13,7 +15,7 @@
         <a href="./index.html">
             <p>Home</p>
         </a>
-        <a href="./html/Activities.html">
+        <a href="./Activities.html">
             <p>Activities</p>
         </a>
     </div>
@@ -21,19 +23,88 @@
 
     <!-- main -->
     <div class="main">
-        <div class="row">
-            <div class="content-box col-4">
-                <h3>Hello world</h3>
-            </div>
-            <div class="content-box col-4">
-                <h3>Hello world</h3>
-            </div>
-            <div class="content-box col-4">
-                <h3>Hello world</h3>
-            </div>
+        <div class="form-container">
+            <h1>CSTU Passport</h1>
+            <!-- Main Form -->
+            <form id="myForm" action="#" method="post">
+                <!-- Firstname and Lastname Field -->
+                <div class="form-group">
+                    <label for="fullname">Firstname and Lastname <span class="required">*</span></label>
+                    <input type="text" id="fullname" name="fullname" required />
+                    <small>Only enter your first name and last name, middle name is not necessary.</small>
+                </div>
+
+                <!-- Student ID Field -->
+                <div class="form-group">
+                    <label for="studentID">Student ID <span class="required">*</span></label>
+                    <input type="text" id="studentID" name="studentID" required />
+                    <small>Please enter your 10-digit student ID.</small>
+                </div>
+
+                <!-- University Email Field -->
+                <div class="form-group">
+                    <label for="email">University Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required />
+                    <small>Please provide your university email in the format "xxx.yyy@dome.tu.ac.th".</small>
+                </div>
+
+                <!-- Work/Activity Title Field -->
+                <div class="form-group">
+                    <label for="workTitle">Work/Activity Title <span class="required">*</span></label>
+                    <input type="text" id="workTitle" name="workTitle" required />
+                </div>
+
+                <!-- Type of Work/Activity Field -->
+                <div class="form-group">
+                    <label for="activityType">Type of Work/Activity <span class="required">*</span></label>
+                    <select id="activityType" name="activityType" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Course">Course</option>
+                        <option value="Activity">Activity</option>
+                        <option value="Work">Work</option>
+                        <option value="Research">Research</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Competition">Competition</option>
+                        <option value="Computer Science">Computer Science</option>
+                    </select>
+                </div>
+
+                <!-- Start Date/Time Field -->
+                <div class="form-group">
+                    <label for="startDate">Start Date/Time <span class="required">*</span></label>
+                    <input type="datetime-local" id="startDate" name="startDate" required />
+                </div>
+
+                <!-- End Date/Time Field -->
+                <div class="form-group">
+                    <label for="endDate">End Date/Time <span class="required">*</span></label>
+                    <input type="datetime-local" id="endDate" name="endDate" required />
+                </div>
+
+                <!-- Location Field -->
+                <div class="form-group">
+                    <label for="location">Location <span class="required">*</span></label>
+                    <input type="text" id="location" name="location" required />
+                </div>
+
+                <!-- Description Field -->
+                <div class="form-group">
+                    <label for="description">Description <span class="required">*</span></label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <input type="submit" value="Submit" />
+                </div>
+            </form>
         </div>
+
+        <!-- JavaScript -->
+        <script src="script.js"></script>
     </div>
     <!-- main -->
 </body>
 </body>
+
 </html>
