@@ -33,8 +33,6 @@
 /* main content */
 .main {
     padding: 20px;
-    /* text-align: center; */
-    /* justify-content: center; */
 }
 .main > h1{
     color: #000000;
@@ -43,52 +41,133 @@
 /* main content */
 
 
+
+/* grid */
+.row::after {
+  content: "";
+  display: grid;
+  clear: both;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 21px;
+  box-sizing: border-box;
+
+  text-align: center;
+  
+}
+
+.col-1 {
+  width: 8.33%;
+}
+
+.col-2 {
+  width: 16.66%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+.col-5 {
+  width: 41.66%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33%;
+}
+
+.col-8 {
+  width: 66.66%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33%;
+}
+
+.col-11 {
+  width: 91.66%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+
+
+[class*="col-"] > img {
+  max-width: 100%;
+}
+/* grid */
+
+
+
 /*for tablet*/
 @media screen and (max-width: 768px) {
-    .navbar {
-        height: 100%;
-        background: rgb(119, 119, 119);
-    }
-    
-    .navbar a {
-        float: left;
-    }
-    div.main {
-        margin-left: 0;
-    }
-    .navbar > h1{
-        display: none;
-    }
-
+  .navbar {
+    height: 100%;
+    background: rgb(119, 119, 119);
+  }
+  
+  .navbar a {
+    float: left;
+  }
+  div.main {
+    margin-left: 0;
+  }
+  .navbar > h1{
+    display: none;
+  }
+  [class*="col-"] {
+    width: 50%;
+  }
 }
+/*for tablet*/
 
 /*for Mobile*/
 @media screen and (max-width: 576px) {
-    .navbar{
-        display: grid;
-        width: 100%;
-    }
-    .navbar a {
-        text-align: center;
-        background: rgb(119, 119, 119);
-    }
-    .navbar > h1{
-        display: none;
-    }
-
-    div.main {
-        padding: 0;
-        margin-left: 0;
-    }
-
+  .navbar{
+    display: grid;
+    width: 100%;
+  }
+  .navbar a {
+    text-align: center;
+    background: rgb(119, 119, 119);
+  }
+  .navbar > h1{
+    display: none;
+  }
+  
+  div.main {
+    padding: 0;
+    margin-left: 0;
+  }
+  [class*="col-"] {
+    width: 100%;
+  }
+  
 }
+/*for Mobile*/
 
 
 .form-container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
     border-radius: 5px;
   }
   
