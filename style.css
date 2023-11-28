@@ -45,13 +45,14 @@
 /* grid */
 .row {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(243px,1fr));
+  /* grid-template-columns: repeat(auto-fit,minmax(243px,1fr)); */
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items:baseline;
   grid-gap:10px;
 }
 
 .row div{
   justify-content: center;
-  align-items: center;
   text-align: center;
 }
 
@@ -136,6 +137,9 @@
   .navbar > h1{
     display: none;
   }
+  .row{
+    grid-template-columns: 1fr 1fr;
+  }
   /* [class*="col-"] {
     width: 50%;
   } */
@@ -161,6 +165,7 @@
     margin-left: 0;
   }
   .row{
+    grid-template-columns: 1fr;
     margin-top:  10px;
     padding: 10px;
   }
@@ -177,7 +182,7 @@
   margin: 20px auto;
   padding: 20px;
   border: 1px solid #ccc;
-    border-radius: 5px;
+  border-radius: 5px;
   }
   
   /* Center-align the heading and add margin at the bottom */
