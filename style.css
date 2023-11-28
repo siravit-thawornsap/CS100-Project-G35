@@ -1,43 +1,52 @@
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    box-sizing: border-box;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 
 /* navbar */
 .navbar {
-    width: 100%;
-    display: flex;
-    height: 100%;
-    align-items: center;
-    background: rgb(119, 119, 119);
-}
-.navbar a:hover {
-    text-align: center;
-    transform: scale(1.5);
-    background-color: rgb(184, 184, 184);
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: rgb(238, 238, 238);
 }
 
-.navbar > a {
-    padding: 16px;
-    display: block;
-    color: black;
-    text-decoration: none;
+.navbar a:hover {
+  text-align: center;
+  /* transform: scale(1.5); */
+  background-color: rgb(184, 184, 184);
 }
+
+.navbar>a {
+  padding: 16px;
+  display: block;
+  color: black;
+  text-decoration: none;
+}
+
+.navbar>h1 {
+  margin: 10px;
+}
+
 /* navbar */
 
 
 /* main content */
 .main {
-    padding: 20px;
+  padding: 20px;
+  background-color: #ffffff;
 }
-.main > h1{
-    color: #000000;
-    text-align: center;
+
+.main>h1 {
+  color: #000000;
+  text-align: center;
+
 }
+
 /* main content */
 
 
@@ -45,78 +54,57 @@
 /* grid */
 .row {
   display: grid;
-  /* grid-template-columns: repeat(auto-fit,minmax(243px,1fr)); */
   grid-template-columns: 1fr 1fr 1fr;
-  align-items:baseline;
-  grid-gap:10px;
+  align-items: baseline;
+  grid-gap: 10px;
+  margin-top: 10px;
 }
-
-.row div{
-  justify-content: center;
+.row h1{
   text-align: center;
 }
 
-/* [class*="col-"] {
-  float: left;
-  padding: 21px;
-  box-sizing: border-box;
-  text-align: center;
-  
-}
-
-.col-1 {
-  width: 8.33%;
+.row-2 {
+  grid-template-columns: repeat(auto-fit, minmax(550px, 2fr));
+  margin-top: 10px;
+  display: grid;
+  align-items: stretch;
+  grid-gap: 10px;
 }
 
 .col-2 {
-  width: 16.66%;
+  padding: 5px;
+  justify-content: center;
+  text-align: center;
+  border: 1px groove #ccc;
+  border-radius: 5px;
 }
 
-.col-3 {
-  width: 25%;
+.col {
+  padding: 5px;
+  justify-content: center;
+  text-align: center;
+  border: 5px groove #ccc;
+  border-radius: 5px;
 }
 
-.col-4 {
-  width: 33.33%;
+.text-box h3 {
+  font-size: 25px;
 }
 
-.col-5 {
-  width: 41.66%;
+.text-box p {
+  text-align: left;
+  margin-left: 30px;
 }
 
-.col-6 {
-  width: 50%;
-}
-
-.col-7 {
-  width: 58.33%;
-}
-
-.col-8 {
-  width: 66.66%;
-}
-
-.col-9 {
-  width: 75%;
-}
-
-.col-10 {
-  width: 83.33%;
-}
-
-.col-11 {
-  width: 91.66%;
-}
-
-.col-12 {
-  width: 100%;
-} */
-
-
-
-.row div img {
+.col img {
+  padding: 10px;
   max-width: 100%;
 }
+
+.col-2 img {
+  max-width: 100%;
+}
+
 /* grid */
 
 
@@ -125,55 +113,66 @@
 @media screen and (max-width: 768px) {
   .navbar {
     height: 100%;
-    background: rgb(119, 119, 119);
+    background: rgb(238, 238, 238);
   }
-  
+
   .navbar a {
     float: left;
   }
+
   div.main {
     margin-left: 0;
   }
-  .navbar > h1{
+
+  .navbar>h1 {
     display: none;
   }
-  .row{
+
+  .row {
     grid-template-columns: 1fr 1fr;
   }
-  /* [class*="col-"] {
-    width: 50%;
-  } */
+
+  .row-2 {
+    grid-template-columns: 1fr;
+  }
 }
+
 /*for tablet*/
 
 /*for Mobile*/
 @media screen and (max-width: 576px) {
-  .navbar{
+  .navbar {
     display: grid;
     width: 100%;
   }
+
   .navbar a {
     text-align: center;
-    background: rgb(119, 119, 119);
+    background: rgb(238, 238, 238);
   }
-  .navbar > h1{
+
+  .navbar>h1 {
     display: none;
   }
-  
+
   div.main {
     padding: 0;
     margin-left: 0;
   }
-  .row{
+
+  .row {
     grid-template-columns: 1fr;
-    margin-top:  10px;
+    margin-top: 10px;
     padding: 10px;
   }
-  /* [class*="col-"] {
-    width: 100%;
-  } */
-  
+
+  .row-2 {
+    grid-template-columns: 1fr;
+    margin-top: 10px;
+    padding: 10px;
+  }
 }
+
 /*for Mobile*/
 
 
@@ -181,62 +180,60 @@
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
+}
+
+/* Center-align the heading and add margin at the bottom */
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Styling for each form group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Styling for form group labels */
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+/* Styling for various form input types */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea,
+.form-group input[type="datetime-local"] {
+  width: 100%;
+  padding: 8px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  }
-  
-  /* Center-align the heading and add margin at the bottom */
-  .form-container h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  /* Styling for each form group */
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  /* Styling for form group labels */
-  .form-group label {
-    display: block;
-    font-weight: bold;
-  }
-  
-  /* Styling for various form input types */
-  .form-group input[type="text"],
-  .form-group input[type="email"],
-  .form-group select,
-  .form-group textarea,
-  .form-group input[type="datetime-local"] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  /* Allow vertical resizing for textareas */
-  .form-group textarea {
-    resize: vertical;
-  }
-  
-  /* Styling for select dropdowns */
-  .form-group select {
-    width: 100%;
-  }
-  
-  /* Styling for the submit button */
-  .form-group input[type="submit"] {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  /* Styling for small helper text */
-  .form-group small {
-    font-size: 12px;
-    color: #888;
-  }
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Allow vertical resizing for textareas */
+.form-group textarea {
+  resize: vertical;
+}
+
+/* Styling for select dropdowns */
+.form-group select {
+  width: 100%;
+}
+
+/* Styling for the submit button */
+.form-group input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Styling for small helper text */
+.form-group small {
+  font-size: 12px;
+  color: #888;
+}
