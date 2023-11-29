@@ -1,10 +1,13 @@
+/* Variables */
 :root {
-  --background--: rgb(255, 255, 255);
-  --navbar--: rgb(139, 139, 139);
-  --col--: rgb(241, 241, 241);
+  --background: #f5f5f5; 
+  --navbar: #333; 
+  --col: #fff; 
+  --text-color: #333; 
+  --link-hover-color: #555; 
 }
 
-
+/* General Styles */
 * {
   margin: 0;
   padding: 0;
@@ -13,65 +16,62 @@
   font-family: sans-serif;
 }
 
+/* Body Styles */
 body {
   width: 100%;
   height: 100%;
-  background-color: var(--background--);
+  background-color: var(--background);
+  color: var(--text-color);
   background-attachment: fixed;
 }
 
-/* navbar */
+/* Navbar Styles */
 .navbar {
   display: flex;
   width: 100%;
   height: 100%;
-  background: var(--navbar--);
+  background: var(--navbar);
+  color: var(--text-color);
 }
 
 .navbar a:hover {
   text-align: center;
-  background-color: rgb(184, 184, 184);
+  background-color: rgb(129, 129, 129);
 }
 
-.navbar>a {
+.navbar > a {
+  color: #fff;
   padding: 16px;
   display: block;
   color: rgb(0, 0, 0);
   text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
 }
 
-.navbar>h1 {
+.navbar p,
+.navbar h1 {
+  color: #fff;
   margin: 10px;
 }
 
-/* navbar */
-
-
-/* main content */
-
+/* Main Content Styles */
 .main {
   min-height: 100vh;
   margin-bottom: -75px;
   padding: 20px;
-  /* width: 100%;
-  height: 100%; */
+  background-color: var(--background);
 }
 
-.main>h1 {
-  color: #000000;
+.main > h1 {
+  color: #fff;
   text-align: center;
-  background-color: var(--navbar--);
+  background-color: var(--navbar);
   border-radius: 20px;
   margin-top: 10px;
-  /* border: 1px groove #ccc; */
-
 }
 
-/* main content */
-
-
-
-/* grid */
+/* Grid Styles */
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -99,84 +99,88 @@ body {
 }
 
 .col-2 {
-  padding: 5px;
+  padding: 10px;
   justify-content: center;
   border: 1px groove #ccc;
   border-radius: 5px;
   max-width: 100%;
-  background-color: var(--col--);
+  background-color: var(--col);
 }
 
 .col {
   padding: 5px;
   text-align: center;
-  background-color: var(--col--);
+  background-color: var(--col);
   justify-content: center;
   border-radius: 5px;
-  border: 1px groove #ccc;
+  border: 1px groove #adadad;
 }
 
 .text-box {
-  align-items: center;
-  justify-content: center;
-  border: 1px groove rgb(139, 139, 139);
-  border-radius: 5px;
   padding: 10px;
+  border: 1px groove rgb(223, 223, 223);
+  border-radius: 5px;
 }
 
 .text-box-col2 {
-  /* align-items: center; */
-  /* justify-content: center; */
   padding: 10px;
-}
-
-.text-box h3 {
-  font-size: 25px;
-}
-
-.text-box p {
   text-align: left;
-  margin-left: 30px;
+  background-color: var(--col);
+  border-radius: 5px;
 }
 
 .text-box-col2 h3 {
   font-size: 25px;
 }
 
+.text-box-col2 ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.text-box-col2 li {
+  margin-bottom: 8px;
+}
+
+.text-box h3,
+.text-box-col2 h3 {
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.text-box p,
 .text-box-col2 p {
   text-align: left;
   margin-left: 30px;
 }
 
-.col img {
-  padding: 10px;
-  max-width: 100%;
-}
-
+.col img,
 .col-2 img {
+  padding: 10px;
+  width: 100%;
+  height: auto;
   max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }
 
-/* grid */
-
-
-
-/*for tablet*/
+/* Media Queries for Tablet */
 @media screen and (max-width: 768px) {
   .navbar {
     height: 100%;
-    background: var(--navbar--);
+    background: var(--navbar);
   }
 
   .navbar a {
     float: left;
   }
 
-  div.main {
+  .main {
     margin-left: 0;
   }
 
-  .navbar>h1 {
+  .navbar > h1 {
     display: none;
   }
 
@@ -187,38 +191,43 @@ body {
   .row-2 {
     grid-template-columns: 1fr;
   }
+
+  .col {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+
+  .text-box {
+    text-align: center;
+  }
+
+  .footer {
+    padding: 10px;
+  }
 }
 
-/*for tablet*/
-
-/*for Mobile*/
+/* Media Queries for Mobile */
 @media screen and (max-width: 576px) {
   .navbar {
     display: grid;
     width: 100%;
-    background: var(--navbar--);
   }
 
   .navbar a {
     text-align: center;
-    background: rgb(238, 238, 238);
+    background: var(--navbar);
   }
 
-  .navbar>h1 {
+  .navbar > h1 {
     display: none;
   }
 
-  div.main {
+  .main {
     padding: 0;
     margin-left: 0;
   }
 
-  .row {
-    grid-template-columns: 1fr;
-    margin-top: 10px;
-    padding: 10px;
-  }
-
+  .row,
   .row-2 {
     grid-template-columns: 1fr;
     margin-top: 10px;
@@ -226,53 +235,55 @@ body {
   }
 }
 
-/*for Mobile*/
-
-
-/* footer */
-.push{
+/* Footer Styles */
+.push {
   height: 75px;
 }
 
 .footer {
   height: 75px;
+  display: flex;
+  align-items: center;
   text-align: center;
   padding: 5px;
-  background-color: var(--navbar--);
+  background-color: var(--navbar);
 }
 
 .footer p {
-  font-size: 25px;
+  font-size: 20px;
   margin: 10px;
+  color: #fff;
 }
 
-/* footer */
-
+/* Form Styles */
 .form-container {
   max-width: 700px;
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 10px;
+  border-radius: 10px;
 }
 
-
-/* Center-align the heading and add margin at the bottom */
-.form-container h1 {
+.form-header {
   text-align: center;
-  margin-bottom: 20px;
+  padding: 20px;
 }
 
-/* Styling for each form group */
+.form-header h1 {
+  border: 2px solid var(--text-color);
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
 .form-group {
   margin-bottom: 20px;
 }
 
-/* Styling for form group labels */
 .form-group label {
   display: block;
   font-weight: bold;
 }
 
-/* Styling for various form input types */
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group select,
@@ -283,21 +294,22 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  background-color: var(--col);
+  color: var(--text-color);
 }
 
-/* Allow vertical resizing for textareas */
 .form-group textarea {
   resize: vertical;
 }
 
-/* Styling for select dropdowns */
 .form-group select {
   width: 100%;
+  background-color: var(--col);
+  color: var(--text-color);
 }
 
-/* Styling for the submit button */
 .form-group input[type="submit"] {
-  background-color: #4caf50;
+  background-color: #0074cc;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -305,7 +317,6 @@ body {
   cursor: pointer;
 }
 
-/* Styling for small helper text */
 .form-group small {
   font-size: 12px;
   color: #888;
