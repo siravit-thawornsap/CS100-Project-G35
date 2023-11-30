@@ -26,6 +26,8 @@
         <div class="row-2">
             <!-- Form Column -->
             <div class="col-2">
+                <!-- Form Container -->
+                <!-- Form Container -->
                 <div class="form-container">
                     <div class="form-header">
                         <h1>CSTU Passport</h1>
@@ -34,31 +36,38 @@
                     <form id="myForm" action="#" method="post">
                         <!-- Firstname and Lastname Field -->
                         <div class="form-group">
-                            <label for="fullname">Firstname and Lastname <span class="required">*</span></label>
-                            <input type="text" id="fullname" name="fullname" required />
+                            <label for="fullname">Firstname and Lastname</label>
+                            <input type="text" id="fullname" name="fullname" />
                             <small>Only enter your first name and last name, middle name is not necessary.</small>
+                            <span id="fullnameError" class="error"></span>
                         </div>
+
                         <!-- Student ID Field -->
                         <div class="form-group">
-                            <label for="studentID">Student ID <span class="required">*</span></label>
-                            <input type="text" id="studentID" name="studentID" required />
+                            <label for="studentID">Student ID</label>
+                            <input type="text" id="studentID" name="studentID" />
                             <small>Please enter your 10-digit student ID.</small>
+                            <span id="studentIDError" class="error"></span>
                         </div>
+
                         <!-- University Email Field -->
                         <div class="form-group">
-                            <label for="email">University Email <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required />
+                            <label for="email">University Email</label>
+                            <input type="email" id="email" name="email" />
                             <small>Please provide your university email in the format "xxx.yyy@dome.tu.ac.th".</small>
+                            <span id="emailError" class="error"></span>
                         </div>
+
                         <!-- Work/Activity Title Field -->
                         <div class="form-group">
-                            <label for="workTitle">Work/Activity Title <span class="required">*</span></label>
-                            <input type="text" id="workTitle" name="workTitle" required />
+                            <label for="workTitle">Work/Activity Title</label>
+                            <input type="text" id="workTitle" name="workTitle" />
                         </div>
+
                         <!-- Type of Work/Activity Field -->
                         <div class="form-group">
-                            <label for="activityType">Type of Work/Activity <span class="required">*</span></label>
-                            <select id="activityType" name="activityType" required>
+                            <label for="activityType">Type of Work/Activity</label>
+                            <select id="activityType" name="activityType">
                                 <option value="" disabled selected>Select an option</option>
                                 <option value="Course">Course</option>
                                 <option value="Activity">Activity</option>
@@ -69,26 +78,58 @@
                                 <option value="Computer Science">Computer Science</option>
                             </select>
                         </div>
+                        <!-- Academic Year Field -->
+                        <div class="form-group">
+                            <label for="academicYear">Academic Year</label>
+                            <select id="academicYear" name="academicYear">
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="2561">2561</option>
+                                <option value="2562">2562</option>
+                                <option value="2563">2563</option>
+                                <option value="2564">2564</option>
+                                <option value="2565">2565</option>
+                                <option value="2566">2566</option>
+                                <option value="2567">2567</option>
+                                <option value="2568">2568</option>
+                                <option value="2569">2569</option>
+                            </select>
+                        </div>
+
+                        <!-- Semester Field -->
+                        <div class="form-group">
+                            <label for="semester">Semester</label>
+                            <select id="semester" name="semester">
+                                <option value="" disabled selected>Select an option</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="Summer">Summer</option>
+                            </select>
+                        </div>
+
                         <!-- Start Date/Time Field -->
                         <div class="form-group">
-                            <label for="startDate">Start Date/Time <span class="required">*</span></label>
-                            <input type="datetime-local" id="startDate" name="startDate" required />
+                            <label for="startDate">Start Date/Time</label>
+                            <input type="datetime-local" id="startDate" name="startDate" />
                         </div>
+
                         <!-- End Date/Time Field -->
                         <div class="form-group">
-                            <label for="endDate">End Date/Time <span class="required">*</span></label>
-                            <input type="datetime-local" id="endDate" name="endDate" required />
+                            <label for="endDate">End Date/Time</label>
+                            <input type="datetime-local" id="endDate" name="endDate" />
                         </div>
+
                         <!-- Location Field -->
                         <div class="form-group">
-                            <label for="location">Location <span class="required">*</span></label>
-                            <input type="text" id="location" name="location" required />
+                            <label for="location">Location</label>
+                            <input type="text" id="location" name="location" />
                         </div>
+
                         <!-- Description Field -->
                         <div class="form-group">
-                            <label for="description">Description <span class="required">*</span></label>
-                            <textarea id="description" name="description" rows="4" required></textarea>
+                            <label for="description">Description</label>
+                            <textarea id="description" name="description" rows="4"></textarea>
                         </div>
+
                         <!-- Submit Button -->
                         <div class="form-group">
                             <input type="submit" value="Submit" />
