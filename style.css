@@ -5,6 +5,10 @@
   --col: #fff; 
   --text-color: #333; 
   --link-hover-color: #555; 
+  --textbox_p--:rgb(180, 180, 180);
+  --textwhite--:#ffffff;
+  --textblack--:#000000;
+
 }
 
 /* General Styles */
@@ -120,6 +124,7 @@ body {
   padding: 10px;
   border: 1px groove rgb(223, 223, 223);
   border-radius: 5px;
+  background-color: #dadada;
 }
 
 .text-box-col2 {
@@ -127,6 +132,7 @@ body {
   text-align: left;
   background-color: var(--col);
   border-radius: 5px;
+  background-color: #dadada;
 }
 
 .text-box-col2 h3 {
@@ -139,7 +145,11 @@ body {
 }
 
 .text-box-col2 li {
-  margin-bottom: 8px;
+  margin: 10px;
+  padding: 10px;
+  color: var(--textblack--);
+  background-color: var(--textbox_p--);
+  border-radius: 10px;
 }
 
 .text-box h3,
@@ -152,7 +162,12 @@ body {
 .text-box p,
 .text-box-col2 p {
   text-align: left;
-  margin-left: 30px;
+  background-color: var(--textbox_p--);
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  color: var(--textblack--);
+  font-size: 20px;
 }
 
 .col img,
