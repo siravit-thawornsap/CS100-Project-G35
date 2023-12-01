@@ -57,6 +57,7 @@ body {
 .navbar h1 {
   color: #fff;
   margin: 10px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 /* Main Content Styles */
@@ -73,6 +74,7 @@ body {
   background-color: var(--navbar);
   border-radius: 20px;
   margin-top: 10px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 /* Grid Styles */
