@@ -1,0 +1,31 @@
+[
+    {
+      "id": 1,
+      "value": "Course"
+    },
+    {
+      "id": 2,
+      "value": "Activity"
+    },
+    {
+      "id": 3,
+      "value": "Work"
+    },
+    {
+      "id": 4,
+      "value": "Research"
+    },
+    {
+      "id": 5,
+      "value": "Sports"
+    },
+    {
+      "id": 6,
+      "value": "Competition"
+    },
+    {
+      "id": 7,
+      "value": "Computer Science"
+    }
+  ]
+  
