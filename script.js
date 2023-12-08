@@ -217,6 +217,9 @@ fetch("./Backend/databases/records.json")
       </ul>
     `;
   }
+
+
+  placeholder.innerHTML = out;
 })
 
 
