@@ -200,5 +200,25 @@ function submitForm(event) {
   document.getElementById("myForm").reset();
 }
 
+fetch("./Backend/databases/records.json")
+.then(function(response){
+  return response.json();
+})
+.then(function(products){
+  let placeholder = document.querySelector("#data-output");
+  let out = "";
+  for(let product of products){
+    out += `
+      <h3>Record 1</h3>
+      <ul>
+        <li><strong>Info 1:</strong> ${product.first_name} 1.</li>
+        <li><strong>Info 2:</strong> ${product.last_name} 2.</li>
+        <li><strong>Info 3:</strong> ${product.email} 3.</li>
+      </ul>
+    `;
+  }
+})
+
+
 // Attach a submit event listener to the form
 document.getElementById("myForm").addEventListener("submit", submitForm);
