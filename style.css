@@ -107,11 +107,30 @@ body {
 
 .col-2 {
   padding: 10px;
-  justify-content: center;
   border: 1px groove #ccc;
   border-radius: 5px;
   max-width: 100%;
   background-color: var(--col);
+  align-items: center;
+  justify-content: center;
+}
+.col-data {
+  padding: 10px;
+  border: 1px groove #ccc;
+  border-radius: 5px;
+  max-width: 100%;
+  background-color:#dadada;
+  align-items: center;
+  justify-content: center;
+}
+.col-data li{
+  font-size: 15px;
+  list-style-type: none;
+  background-color: #b4b4b4;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: left;
 }
 
 .col {
