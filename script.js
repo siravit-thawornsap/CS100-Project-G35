@@ -15,10 +15,11 @@ const port = 8000;
 function validateName() {
   const fullnameInput = document.getElementById("fullname");
   const names = fullnameInput.value.trim().split(" ");
+  const namesPattern = /^[a-z].*$/;
   const errorElement = document.getElementById("fullnameError");
 
-  if (names.length !== 2) {
-    errorElement.textContent = "Please enter both your Firstname and Lastname.";
+  if (names.length !== 2 || !namesPattern.test(fullnameInput.value)) {
+    errorElement.textContent = "Please enter both your Firstname and Lastname in English alphabet";
     return false;
   } else {
     errorElement.textContent = ""; // Clear the error message when valid
