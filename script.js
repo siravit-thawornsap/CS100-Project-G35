@@ -295,7 +295,6 @@ function validateForm() {
   // For now, let's assume the form is always valid
   return true;
 }
-
   const out1 = document.getElementById('out1');
   const out2 = document.getElementById('out2');
   const out3 = document.getElementById('out3');
