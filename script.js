@@ -1,8 +1,3 @@
-/*
- Imposter
-*/
-
-
 const config = {
   backendUrl: "http://localhost:8000/", // Default backend URL
 };
@@ -87,12 +82,25 @@ const setSuccess = element => {
     return true;
   }
   
-  // Function to validate form inputs on user input
-  function validateFormOnInput() {
-    validateName();
-    validateStudentID();
-    validateEmail();
+// Function to validate form inputs on user input
+function validateFormOnInput() {
+  const isNameValid = validateName();
+  const isStudentIDValid = validateStudentID();
+  const isEmailValid = validateEmail();
+
+  if (isNameValid) {
+      setSuccess(document.getElementById("fullname"));
   }
+
+  if (isStudentIDValid) {
+      setSuccess(document.getElementById("studentID"));
+  }
+
+  if (isEmailValid) {
+      setSuccess(document.getElementById("email"));
+  }
+}
+
   
   // Function to fetch activity types from the backend
   async function fetchActivityTypes() {
@@ -200,74 +208,94 @@ const setSuccess = element => {
     }
   }
   
-  // Event listener for form submission
-  document.getElementById("myForm").addEventListener("submit", submitForm);
-  
-  // Event listeners for input validation on user input
-  document.getElementById("fullname").addEventListener("input", validateName);
-  document
-    .getElementById("studentID")
-    .addEventListener("input", validateStudentID);
-  document.getElementById("email").addEventListener("input", validateEmail);
-  //Update
-  document.addEventListener('DOMContentLoaded', function () {
+// Event listener for form submission
+document.getElementById("myForm").addEventListener("submit", function (event) {
+  event.preventDefault();
 
-  document.getElementById('myForm').addEventListener('submit', function (event) {
-    
-    var fullname = document.getElementById('fullname').value;
-    var studentID = document.getElementById('studentID').value;
-    var email = document.getElementById('email').value;
-    var activityType = document.getElementById('activityType').value;
-    var semester = document.getElementById('semester').value;
-    var startDate = document.getElementById('startDate').value;
-    var location = document.getElementById('location').value;
-    var description = document.getElementById('description').value;
+  // Validate form inputs before submission
+  if (!validateName() || !validateStudentID() || !validateEmail()) {
+    return;
+  }
 
-    if (
-      fullname === '' ||
-      studentID === '' ||
-      email === '' ||
-      activityType === '' ||
-      semester === '' ||
-      startDate === '' ||
-      location === '' ||
-      description === ''
-    ) {
-      
-      alert('Please fill out all fields.');
-      
-      event.preventDefault();
-    }
-  });
+  // Create the data object from the form inputs
+  const formData = new FormData(event.target);
+  const data = {
+    first_name: formData.get("fullname").split(" ")[0],
+    last_name: formData.get("fullname").split(" ")[1],
+    student_id: parseInt(formData.get("studentID")),
+    email: formData.get("email"),
+    title: formData.get("workTitle"),
+    type_of_work_id: parseInt(formData.get("activityType")),
+    academic_year: parseInt(formData.get("academicYear")) - 543,
+    semester: parseInt(formData.get("semester")),
+    start_date: formData.get("startDate"),
+    end_date: formData.get("endDate"),
+    location: formData.get("location"),
+    description: formData.get("description")
+  };
+
+  // Display the data on the page
+  displayFormData(data);
+
+  // Reset the form after submission
+  document.getElementById("myForm").reset();
 });
+
+// Function to display form data on the page
+function displayFormData(data) {
+  const outputElement = document.getElementById("data-output");
+  outputElement.innerHTML = `
+    <div class="col-data">
+      <ul>
+        <li><strong>First name:</strong> ${data.first_name} ${data.last_name}</li>
+        <li><strong>Student id:</strong> ${data.student_id}</li>
+        <li><strong>Email:</strong> ${data.email}</li>
+        <li><strong>Title:</strong> ${data.title}</li>
+        <li><strong>Academic Year:</strong> ${data.academic_year}</li>
+        <li><strong>Semester:</strong> ${data.semester}</li>
+        <li><strong>Start Date:</strong> ${data.start_date}</li>
+        <li><strong>End Date:</strong> ${data.end_date}</li>
+        <li><strong>Location:</strong> ${data.location}</li>
+        <li><strong>Description:</strong> ${data.description}</li>
+      </ul>
+    </div>
+  `;
+}
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Add event listener for form submission
-  document.getElementById('myForm').addEventListener('submit', function (event) {
-    // Validate the form data here
+// Event listener for form submission
+document.getElementById("myForm").addEventListener("submit", function (event) {
+  event.preventDefault();
 
-    // If the form data is valid, you can submit the form and then reset it
-    if (validateForm()) {
+  // Validate form inputs before submission
+  if (validateForm()) {
       // Perform any necessary actions (e.g., submit the form to a server)
 
       // Reset the form
-      document.getElementById('myForm').reset();
-
-      // Prevent the default form submission behavior
-      event.preventDefault();
-    }
-  });
-
-  // Function to validate form data
-  function validateForm() {
-    // Add your validation logic here
-    // Return true if the form is valid, false otherwise
-    // You can also display error messages if needed
-
-    // For now, let's assume the form is always valid
-    return true;
+      document.getElementById("myForm").reset();
   }
+  });
+});
+// Function to validate form data
+function validateForm() {
+  // Add your validation logic here
+  // Return true if the form is valid, false otherwise
+  // You can also display error messages if needed
+
+  // Example: Check if start date is before end date
+  const startDate = new Date(document.getElementById("startDate").value);
+  const endDate = new Date(document.getElementById("endDate").value);
+
+  if (endDate <= startDate) {
+      setError(document.getElementById("endDate"), 'End datetime should be after the start datetime.');
+      return false;
+  }
+
+  // For now, let's assume the form is always valid
+  return true;
+}
+
   const out1 = document.getElementById('out1');
   const out2 = document.getElementById('out2');
   const out3 = document.getElementById('out3');
@@ -299,4 +327,3 @@ document.addEventListener('DOMContentLoaded', function () {
     
   }
   submit.addEventListener('click',fun1);
-});
