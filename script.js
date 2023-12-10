@@ -300,3 +300,7 @@ function displayFormData(data) {
 }
 
 document.getElementById("myForm").addEventListener("submit", submitForm);
+
+document.getElementById("fullname").addEventListener("input", validateName);
+document.getElementById("studentID").addEventListener("input", validateStudentID);
+document.getElementById("email").addEventListener("input", validateEmail);
