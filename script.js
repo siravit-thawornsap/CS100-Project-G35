@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*
   File: script.js
   Author: CS100 Team
@@ -9,6 +10,8 @@
 
 =======
 >>>>>>> db88b59868ae93c6c30aa6f3d1ab7c373af8e223
+=======
+>>>>>>> 8d51e8c7d5a21d455bd17ddccbf9376ee0ae7c64
 const config = {
   backendUrl: "http://localhost:8000/", // Default backend URL
 };
@@ -456,7 +459,10 @@ function validateForm() {
   // For now, let's assume the form is always valid
   return true;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8d51e8c7d5a21d455bd17ddccbf9376ee0ae7c64
   const out1 = document.getElementById('out1');
   const out2 = document.getElementById('out2');
   const out3 = document.getElementById('out3');
@@ -521,4 +527,7 @@ fetch("./Backend/databases/records.json")
 document.getElementById("myForm").addEventListener("submit", submitForm);
 =======
   submit.addEventListener('click',fun1);
+<<<<<<< HEAD
 >>>>>>> db88b59868ae93c6c30aa6f3d1ab7c373af8e223
+=======
+>>>>>>> 8d51e8c7d5a21d455bd17ddccbf9376ee0ae7c64
