@@ -7,7 +7,7 @@
 */
 
 const config = {
-  backendUrl: "http://localhost:8000/", // Default backend URL
+  backendUrl: "http://localhost:8000/" // Default backend URL
 };
 const port = 8000;
 
