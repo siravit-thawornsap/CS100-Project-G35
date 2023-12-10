@@ -1,3 +1,7 @@
+/*
+IDK
+*/
+
 const config = {
   backendUrl: "http://localhost:8000/", // Default backend URL
 };
@@ -207,39 +211,39 @@ function validateFormOnInput() {
       console.error("An error occurred while submitting form data:", error);
     }
   }
-    function showInput() {
-      var name = document.getElementById("fullname").value;
-      var studentID = document.getElementById("studentID").value;
-      var universityEmail = document.getElementById("email").value;
-      var workTitle = document.getElementById("workTitle").value;
-      var workType = document.getElementById("activityType").value;
-      var academicYear = document.getElementById("academicYear").value;
-      var semester = document.getElementById("semester").value;
-      var startDate = document.getElementById("startDate").value;
-      var endDate = document.getElementById("endDate").value;
-      var location = document.getElementById("location").value;
-      var description = document.getElementById("description").value;
-    
-      if (name &&studentID &&universityEmail &&workTitle &&workType 
-        &&academicYear &&semester &&startDate &&endDate &&location ||description) {
-          var result =
-          "<p>Firstname and Lastname: " +name +"</p>" +
-          "<p>Student ID: " +studentID +"</p>" +
-          "<p>University Email: " +universityEmail +"</p>" +
-          "<p>Work/Activity Title: " +workTitle +"</p>" +
-          "<p>Type of Work/Activity: " +workType +"</p>" +
-          "<p>Academic Year: " +academicYear +"</p>" +
-          "<p>Semester: " +semester +"</p>" +
-          "<p>Start Date/Time: " +startDate +"</p>" +
-          "<p>End Date/Time: " +endDate +"</p>" +
-          "<p>Location: " +location +"</p>" +
-          "<p>Description: " +description +"</p>";
-    
-          display_message.innerHTML = result;
-      } else {
-        alert("Please fill in all required information.");
-      }
-    }
+function showInput() {
+  var name = document.getElementById("fullname").value;
+  var studentID = document.getElementById("studentID").value;
+  var universityEmail = document.getElementById("email").value;
+  var workTitle = document.getElementById("workTitle").value;
+  var workType = document.getElementById("activityType").value;
+  var academicYear = document.getElementById("academicYear").value;
+  var semester = document.getElementById("semester").value;
+  var startDate = document.getElementById("startDate").value;
+  var endDate = document.getElementById("endDate").value;
+  var location = document.getElementById("location").value;
+  var description = document.getElementById("description").value;
+
+  if (name &&studentID &&universityEmail &&workTitle &&workType 
+    &&academicYear &&semester &&startDate &&endDate &&location ||description) {
+      var result =
+      "<p>Firstname and Lastname: " +name +"</p>" +
+      "<p>Student ID: " +studentID +"</p>" +
+      "<p>University Email: " +universityEmail +"</p>" +
+      "<p>Work/Activity Title: " +workTitle +"</p>" +
+      "<p>Type of Work/Activity: " +workType +"</p>" +
+      "<p>Academic Year: " +academicYear +"</p>" +
+      "<p>Semester: " +semester +"</p>" +
+      "<p>Start Date/Time: " +startDate +"</p>" +
+      "<p>End Date/Time: " +endDate +"</p>" +
+      "<p>Location: " +location +"</p>" +
+      "<p>Description: " +description +"</p>";
+
+      display_message.innerHTML = result;
+  } else {
+    alert("Please fill in all required information.");
+  }
+}
   
 // Event listener for form submission
 document.getElementById("myForm").addEventListener("submit", function (event) {
@@ -295,67 +299,4 @@ function displayFormData(data) {
   `;
 }
 
-
-document.addEventListener('DOMContentLoaded', function () {
-// Event listener for form submission
-document.getElementById("myForm").addEventListener("submit", function (event) {
-  event.preventDefault();
-
-  // Validate form inputs before submission
-  if (validateForm()) {
-      // Perform any necessary actions (e.g., submit the form to a server)
-
-      // Reset the form
-      document.getElementById("myForm").reset();
-  }
-  });
-});
-// Function to validate form data
-function validateForm() {
-  // Add your validation logic here
-  // Return true if the form is valid, false otherwise
-  // You can also display error messages if needed
-
-  // Example: Check if start date is before end date
-  const startDate = new Date(document.getElementById("startDate").value);
-  const endDate = new Date(document.getElementById("endDate").value);
-
-  if (endDate <= startDate) {
-      setError(document.getElementById("endDate"), 'End datetime should be after the start datetime.');
-      return false;
-  }
-
-  // For now, let's assume the form is always valid
-  return true;
-}
-  const out1 = document.getElementById('out1');
-  const out2 = document.getElementById('out2');
-  const out3 = document.getElementById('out3');
-  const out4 = document.getElementById('out4');
-  const out5 = document.getElementById('out5');
-  const out6 = document.getElementById('out6');
-  const out7 = document.getElementById('out7');
-  const out8 = document.getElementById('out8');
-  const submit = document.getElementById('submit');
-  const fullname = document.getElementById('fullname');
-  const studentID = document.getElementById('studentID');
-  const email = document.getElementById('email');
-  const activityType = document.getElementById('activityType');
-  const semester = document.getElementById('semester');
-  const startDate = document.getElementById('startDate');
-  const location = document.getElementById('location');
-  const description = document.getElementById('description');
-
-
-  function  fun1(){
-     out1.innerHTML = fullname.value;
-     out2.innerHTML = studentID.value;
-     out3.innerHTML = email.value;
-     out4.innerHTML = activityType.value;
-     out5.innerHTML = semester.value;
-     out6.innerHTML = startDate.value;
-     out7.innerHTML = location.value;
-     out8.innerHTML = description.value;
-    
-  }
-  submit.addEventListener('click',fun1);
+document.getElementById("myForm").addEventListener("submit", submitForm);
