@@ -68,7 +68,7 @@ function validateFormOnInput() {
 // Function to fetch activity types from the backend
 async function fetchActivityTypes() {
   try {
-    const response = await fetch(`http://${window.location.hostname}:${port}/getActivityType`);
+    const response = await fetch(`http://${window.location.host}:${port}/getActivityType`);
     if (response.ok) {
       const data = await response.json();
       return data;
@@ -141,7 +141,7 @@ async function submitForm(event) {
 
   try {
     // Send data to the backend using POST request
-    const response = await fetch(`http://${window.location.hostname}:${port}/record`, {
+    const response = await fetch(`http://${window.location.host}:${port}/record`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
