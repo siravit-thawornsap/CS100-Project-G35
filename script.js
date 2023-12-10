@@ -254,6 +254,16 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     return;
   }
 
+  const startDateInput = document.getElementById("startDate").value;
+  const endDateInput = document.getElementById("endDate").value;
+  const startDate = new Date(startDateInput);
+  const endDate = new Date(endDateInput);
+
+  if (endDate <= startDate) {
+    alert("End datetime should be after the start datetime.");
+    return;
+  }
+
   // Create the data object from the form inputs
   const formData = new FormData(event.target);
   const data = {
