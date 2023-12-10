@@ -68,7 +68,7 @@ function validateFormOnInput() {
 // Function to fetch activity types from the backend
 async function fetchActivityTypes() {
   try {
-    const response = await fetch(`http://${window.location.host}:${port}/getActivityType`);
+    const response = await fetch(config.backendUrl + "getActivityType");
     if (response.ok) {
       const data = await response.json();
       return data;
