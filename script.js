@@ -211,12 +211,20 @@ fetch("./Backend/databases/records.json")
   var keyNames = Object.keys(products);
   for(let product of products){
     out += `
-      <h3>Record 1</h3>
+    <div class = "col-data">
       <ul>
-        <li><strong>First name:</strong> ${product.first_name} </li>
-        <li><strong>Last name:</strong> ${product.last_name} </li>
-        <li><strong>Email:</strong> ${product.email}</li>
+        <li><strong>First name :</strong>${product.first_name} ${product.last_name} </li>
+        <li><strong>Student id :</strong>${product.student_id}</li>
+        <li><strong>Email :</strong>${product.email}</li>
+        <li><strong>Title :</strong>${product.title}</li>
+        <li><strong>Academic Year :</strong>${product.academic_year}</li>
+        <li><strong>Semester :</strong>${product.semester}</li>
+        <li><strong>Start Date :</strong>${product.start_date.split('T')[0]} ${product.start_date.split('T')[1].replace('Z','')}</li>
+        <li><strong>End Date :</strong>${product.end_date.split('T')[0]} ${product.end_date.split('T')[1].replace('Z','')}</li>
+        <li><strong>Location :</strong>${product.location}</li>
+        <li><strong>Description :</strong>${product.description}</li>
       </ul>
+    </div>
     `;
   }
   placeholder.innerHTML = out;

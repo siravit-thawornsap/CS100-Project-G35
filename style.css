@@ -54,10 +54,16 @@ body {
   font-size: 25px;
 }
 
-.navbar p,
-.navbar h1 {
+.navbar p {
   color: #fff;
   margin: 10px;
+  font-family: 'Courier New', Courier, monospace;
+}
+.navbar h1 {
+  font-size: 35px;
+  font-weight:bolder ;
+  color: #fff;
+  margin: 20px;
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -107,11 +113,30 @@ body {
 
 .col-2 {
   padding: 10px;
-  justify-content: center;
   border: 1px groove #ccc;
   border-radius: 5px;
   max-width: 100%;
   background-color: var(--col);
+  align-items: center;
+  justify-content: center;
+}
+.col-data {
+  padding: 10px;
+  border: 1px groove #ccc;
+  border-radius: 5px;
+  max-width: 100%;
+  background-color:#dadada;
+  align-items: center;
+  justify-content: center;
+}
+.col-data li{
+  font-size: 15px;
+  list-style-type: none;
+  background-color: #b4b4b4;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: left;
 }
 
 .col {
@@ -155,9 +180,8 @@ body {
   border-radius: 10px;
 }
 
-.text-box h3,
-.text-box-col2 h3 {
-  font-size: 25px;
+.text-box h3 {
+  font-size: 20px;
   text-align: center;
   margin-bottom: 10px;
 }
@@ -167,10 +191,10 @@ body {
   text-align: left;
   background-color: var(--textbox_p--);
   border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
+  /* margin: 10px; */
+  padding: 20px;
   color: var(--textblack--);
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .col img,
@@ -179,7 +203,7 @@ body {
   width: 100%;
   height: auto;
   max-width: 100%;
-  max-height: 696px;
+  max-height: 300px;
   object-fit: cover;
 }
 
